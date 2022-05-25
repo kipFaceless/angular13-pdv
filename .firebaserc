@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular13-pdv": {
+      "hosting": {
+        "angular13-pdv": [
+          "angular13-pdv"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular13-pdv"
+  }
+}
