@@ -51,10 +51,12 @@ mat-sidenav{
   margin-left: 32px;
   font-size: 2rem;
   display: flex;
-  justify-content: center;
-  align-items : center;
-  color : lightgray;
-  border-radius : 10px
+ // justify-content: center;
+  //align-items : center;
+ // color : rgb(172, 27, 27);
+  border-radius : 10px;
+  padding: 32px;
+
 }
 mat-sidenav-container{
   height: calc(100vh - 65px);

@@ -7,6 +7,7 @@ import {canActivate, redirectUnauthorizedTo, redirectLoggedInTo} from '@angular/
 import { LoginModule } from './public/auth/login/login.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
+import { PdvComponent } from './components/pdv/pdv.component';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login'])
 const redirectToHome = () => redirectLoggedInTo(['home'])
@@ -27,6 +28,12 @@ const routes: Routes = [
     //...canActivate(redirectToHome)
   },
 
+  {
+    path : "register",
+    loadChildren : () => import("./public/auth/register/register.module").then(m=>m.RegisterModule),
+    //...canActivate(redirectToHome)
+  },
+
 
   {
     path : '', component : DashboardComponent, children : [
@@ -43,6 +50,13 @@ const routes: Routes = [
     loadChildren : () => import("./components/home/home.module").then(m=>m.HomeModule), component :  HomeComponent,
     //...canActivate(redirectToLogin)
 
+  },
+
+  {
+    path : "pdv",
+    loadChildren : () => import("./components/pdv/pdv.module").then(m=>m.PdvModule), component :  PdvComponent,
+    //...canActivate(redirectToLogin)
+
   }
 
 
@@ -55,6 +69,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+
 
 
 exports: [RouterModule]
